@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+: "${USER:=onur}"
+: "${PASSWORD:=z}"
+: "${PORT:=5984}"
+: "${VERSION:=3.1.1}"
+
+docker run \
+  -p $PORT:5984 \
+  -v "$(pwd)/data:/opt/couchdb/data" \
+  -v "$(pwd)/etc:/opt/couchdb/etc/local.d" \
+  -it \
+  --rm \
+  -e COUCHDB_USER=$USER \
+  -e COUCHDB_PASSWORD=$PASSWORD \
+  couchdb:$VERSION
