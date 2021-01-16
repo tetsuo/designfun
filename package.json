@@ -16,11 +16,13 @@
   "dependencies": {
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-node-resolve": "^11.1.0",
     "@rollup/plugin-virtual": "^2.0.3",
     "babelify": "^10.0.0",
     "deps-sort": "^2.0.1",
     "glob": "^7.1.6",
     "module-deps": "^6.2.3",
+    "rollup": "^2.36.1",
     "stream-collector": "^1.0.1",
     "toposort": "^2.0.2",
     "transform-deps": "^2.0.0"
