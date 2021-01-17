@@ -8,8 +8,7 @@
     "designfun": "bin.js"
   },
   "scripts": {
-    "update": "./scripts/update",
-    "test": "eslint *.js"
+    "lint": "eslint **/*.js"
   },
   "keywords": [],
   "author": "",
