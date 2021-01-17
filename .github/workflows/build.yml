@@ -11,7 +11,7 @@ jobs:
         node-version: [12.x]
     steps:
       - name: Checkout source
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Install Node.js
         uses: actions/setup-node@v1
@@ -45,7 +45,7 @@ jobs:
     needs: test
     steps:
       - name: Checkout source
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Install Node.js
         uses: actions/setup-node@v1
@@ -73,10 +73,6 @@ jobs:
         run: npm run lint
 
       - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
-          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
         run: |
           set -euxo pipefail
 
@@ -124,7 +120,7 @@ jobs:
               git tag "$next"
               git config user.name github-actions
               git config user.email github-actions@github.com
-              git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" --tags
+              git push --tags
               echo "RELEASE_TAG=$next" >> $GITHUB_ENV
             fi
           }
