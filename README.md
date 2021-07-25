@@ -3,7 +3,7 @@
 compile CouchDB design documents
 
 ```
-npm install @tetsuo/designfun@0.0.2
+npm install @tetsuo/designfun
 ```
 
 ## Usage
